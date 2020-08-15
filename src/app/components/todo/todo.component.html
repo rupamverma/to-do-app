@@ -1,0 +1,36 @@
+<div class="top-bar"></div>
+<nav class="navbar navbar-expand-md navbar-light bg-light shadow p-1 mb-5 bg-light rounded">
+    <a href="#" class="navbar-brand">
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="#" class="nav-item nav-link active">Welcome {{user}}</a>
+        </div>
+        <div class="navbar-nav ml-auto">
+            <a href="#" class="nav-item nav-link">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <form>
+        <div class="form-group">
+            <h1 class="text-center text-primary">Todo App</h1>
+            <div class="input-group-prepend">
+                <input type="text" #todo class="form-control" placeholder="Add Todo" name="todo" ngModel>
+                <span class="input-group-text" (click)="addTodo(todo.value)"><i class="material-icons">add</i></span>
+            </div>
+        </div>
+        <div class="data">
+            <ul class="list-unstyled">
+                <li *ngFor="let todo of data.todos">{{todo.title}} <i (click)="deleteItem(todo)" class="material-icons">delete</i></li>
+            </ul>
+        </div>
+    </form>
+    
+</div>
+
